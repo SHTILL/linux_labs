@@ -10,3 +10,4 @@ disk2.img
 .modinst
 /out/
 /rootfs
+/tftp/
