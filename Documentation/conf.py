@@ -133,6 +133,8 @@ try:
 except:
     None
 
+# extensions.append("sphinxcontrib.ditaa")
+# extensions.append("sphinxcontrib.asciinema")
 extensions.append("ditaa")
 extensions.append("asciicast")
 
