@@ -1,3 +1,8 @@
-docutils
+# jinja2>=3.1 is not compatible with Sphinx<4.0
+docutils==0.16
+jinja2<3.1
 Sphinx==2.4.4
-sphinx_rtd_theme
+six==1.16.0
+hieroglyph==2.1.0
+sphinxcontrib-ditaa==1.0.2
+sphinxcontrib.asciinema==0.3.7

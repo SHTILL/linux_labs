@@ -47,6 +47,12 @@ docs:
 	for i in $(KDIR)/Documentation/output/slides/teaching/so2/lec*.html; do name=$$(basename $$i .html); cp $$i $(KDIR)/Documentation/output/teaching/so2/$$name-slides.html; done
 	cp -r $(KDIR)/Documentation/output/slides/teaching/_static $(KDIR)/Documentation/output/teaching/
 
+pdfdocs:
+	$(MAKE) -C $(KDIR) DOCBOOKS= SPHINXDIRS="teaching" pdfdocs || cp $(KDIR)/Documentation/output/teaching/latex/ditaa*.png $(KDIR)/Documentation/output/teaching/
+	$(MAKE) -C $(KDIR) DOCBOOKS= SPHINXDIRS="teaching" pdfdocs
+	rm $(KDIR)/Documentation/output/teaching/ditaa*.png
+
+
 clean::
 	$(MAKE) -C $(KDIR) M=$(KDIR)/tools/labs/skels ARCH=$(ARCH) clean
 	for i in $(shell find skels -name Makefile | xargs --no-run-if-empty dirname); do $(MAKE) -C $$i clean; done
